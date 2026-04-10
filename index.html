@@ -52,53 +52,55 @@
         walking through blocking strategies, model estimation, and how to evaluate your match quality.
       </p>
       <p class="welcome-sub">
-        Everything you need is on this page. Grab the setup guide before the session so you're ready to go.
+        Everything you need is on this page. Follow along at your own pace — no installation required.
       </p>
     </section>
 
     <div class="blue-rule"></div>
 
-    <section id="setup" class="block">
-      <h2>Setup Guide</h2>
-      <p class="desc">
-        Get your environment ready before the workshop. The guide walks through
-        installation and configuration — should take about 10 minutes.
-      </p>
-      <a class="btn" href="PASTE_SETUP_DOC_LINK" target="_blank" rel="noreferrer">Setup Guide</a>
-    </section>
+    <!-- SECTION GRID -->
+    <div class="section-grid">
 
-    <section id="datasets" class="block">
-      <h2>Synthetic Datasets</h2>
-      <p class="desc">
-        Synthetic datasets we'll use during the session. These are modeled after real
-        CODES data but contain no actual records. Download them ahead of time if you can.
-      </p>
-      <a class="btn" href="PASTE_DATA_FOLDER_LINK" target="_blank" rel="noreferrer">Datasets Folder</a>
-    </section>
+      <section id="activity" class="block block--activity">
+        <div class="block-icon">🎯</div>
+        <h2>Fun Activity</h2>
+        <p class="desc">
+          Warm up your record linkage instincts before we dive into the code.
+          This activity gives you a feel for how probabilistic matching works —
+          no Python required.
+        </p>
+        <a class="btn" href="https://github.com/divyankapawaskar/splink-workshop-SAVIR2026/blob/main/Activity_Match_Weights.docx" target="_blank" rel="noreferrer">Open Activity</a>
+      </section>
 
-    <section id="code" class="block">
-      <h2>Linkage Code</h2>
-      <p class="desc">
-        All workshop code is in the doc linked below. Open it before the session
-        so you can follow along in RStudio.
-      </p>
-      <a class="btn" href="PASTE_CODE_DOC_LINK" target="_blank" rel="noreferrer">Code Doc</a>
-    </section>
+      <section id="demo" class="block block--demo">
+        <div class="block-icon">💻</div>
+        <h2>Live Demo</h2>
+        <p class="desc">
+          Click below to launch the interactive workshop notebook in your browser.
+          No installation, no account — just click and run. Works on any device.
+        </p>
+        <a class="btn btn--demo" href="https://mybinder.org/v2/gh/divyankapawaskar/splink-workshop-binder/HEAD" target="_blank" rel="noreferrer">Launch Notebook</a>
+        <p class="block-note">⏳ First load takes ~1 minute. Keep the tab open once it's running.</p>
+      </section>
 
-    <section id="slides" class="block">
-      <h2>Workshop Slides</h2>
-      <p class="desc">
-        Slides will be posted here during or shortly after the workshop.
-      </p>
-      <a class="btn" href="PASTE_SLIDES_LINK_WHEN_READY" target="_blank" rel="noreferrer">Slides</a>
-    </section>
+      <section id="slides" class="block block--slides">
+        <div class="block-icon">📊</div>
+        <h2>Workshop Slides</h2>
+        <p class="desc">
+          Follow along with the presentation slides. Posted here during
+          or shortly after the workshop session.
+        </p>
+        <a class="btn" href="https://github.com/divyankapawaskar/splink-workshop-SAVIR2026/blob/main/Splink_Workshop_Submission_Version.pdf" target="_blank" rel="noreferrer">View Slides</a>
+      </section>
+
+    </div>
 
     <p class="help-note">If it's not working, pretend it's a linkage problem and bring it to us. That's what we're here for.</p>
 
     <div class="blue-rule"></div>
 
-    <section id="contact" class="block">
-      <h2>Let's Stay Linked, No Blocking Rules Here</h2>
+    <section id="contact" class="block block--contact">
+      <h2>Let's Stay Linked — No Blocking Rules Here</h2>
       <div class="contact-card-row">
         <div class="contact-card">
           <p class="contact-name">Stephanie Jansson</p>
@@ -107,7 +109,12 @@
         <div class="contact-card">
           <p class="contact-name">Divyanka Pawaskar</p>
           <a href="mailto:divyanka.pawaskar@health.ny.gov">divyanka.pawaskar@health.ny.gov</a>
-          <a class="linkedin-link" href="https://www.linkedin.com/in/divyankapawaskar/" target="_blank" rel="noreferrer"><svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>Connect on LinkedIn</a>
+          <a class="linkedin-link" href="https://www.linkedin.com/in/divyankapawaskar/" target="_blank" rel="noreferrer">
+            <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            Connect on LinkedIn
+          </a>
         </div>
         <div class="contact-card">
           <p class="contact-name">Tara Sangal</p>
