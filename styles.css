@@ -15,6 +15,12 @@
   --gray-400: #999;
   --gray-600: #555;
   --max-width: 960px;
+
+  /* Section accent colors */
+  --activity-accent: #e8903a;
+  --demo-accent: #1f4e9e;
+  --datasets-accent: #2a8a5e;
+  --slides-accent: #5b3a8e;
 }
 
 /* =========================
@@ -229,14 +235,23 @@ a.logo-item:hover {
 }
 
 /* =========================
+   SECTION GRID — 3 columns
+   ========================= */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+}
+
+/* =========================
    SECTION BLOCKS
    ========================= */
 .block {
-  margin: 40px 0;
   padding: 28px;
   background: var(--white);
   border: 1px solid var(--gray-100);
-  border-radius: 14px;
+  border-radius: 16px;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -244,56 +259,83 @@ a.logo-item:hover {
   animation: fadeUp 0.5s ease forwards;
 }
 
-.block:nth-of-type(1) { animation-delay: 0.35s; }
-.block:nth-of-type(2) { animation-delay: 0.42s; }
-.block:nth-of-type(3) { animation-delay: 0.49s; }
-.block:nth-of-type(4) { animation-delay: 0.56s; }
-.block:nth-of-type(5) { animation-delay: 0.63s; }
+/* Staggered animation for grid blocks */
+.block--activity  { animation-delay: 0.35s; }
+.block--demo      { animation-delay: 0.45s; }
+.block--datasets  { animation-delay: 0.55s; }
+.block--slides    { animation-delay: 0.65s; }
+.block--contact   { animation-delay: 0.75s; }
+
+/* Colored top bar per section */
+.block--activity::before  { background: var(--activity-accent); }
+.block--demo::before      { background: var(--demo-accent); }
+.block--datasets::before  { background: var(--datasets-accent); }
+.block--slides::before    { background: var(--slides-accent); }
+.block--contact::before   { background: linear-gradient(90deg, var(--purple), var(--blue)); }
 
 .block::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, var(--purple), var(--blue));
-  border-radius: 14px 0 0 14px;
+  right: 0;
+  height: 4px;
+  border-radius: 16px 16px 0 0;
 }
 
 .block:hover {
   border-color: transparent;
-  box-shadow: 0 6px 28px rgba(91,58,142,0.08), 0 1px 6px rgba(0,0,0,0.03);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(91,58,142,0.10), 0 1px 6px rgba(0,0,0,0.03);
+  transform: translateY(-3px);
 }
 
+/* Contact block spans full width */
+.block--contact {
+  margin-top: 0;
+}
+
+/* =========================
+   BLOCK ICON
+   ========================= */
+.block-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+/* =========================
+   BLOCK HEADINGS
+   ========================= */
 .block h2 {
   font-family: 'DM Serif Display', Georgia, serif;
   font-size: 22px;
   font-weight: 400;
   color: var(--purple);
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  margin-bottom: 10px;
 }
 
-.block h2::before {
-  content: '';
-  width: 7px;
-  height: 7px;
-  background: var(--yellow);
-  border-radius: 2px;
-  transform: rotate(45deg);
-  flex-shrink: 0;
-}
+.block--activity h2  { color: var(--activity-accent); }
+.block--demo h2      { color: var(--demo-accent); }
+.block--datasets h2  { color: var(--datasets-accent); }
+.block--slides h2    { color: var(--slides-accent); }
+.block--contact h2   { color: var(--purple); }
 
 .desc {
   color: var(--gray-600);
-  font-size: 15.5px;
-  margin-bottom: 16px;
+  font-size: 15px;
+  margin-bottom: 18px;
   line-height: 1.65;
-  max-width: 620px;
+}
+
+/* =========================
+   BLOCK NOTE (small helper text)
+   ========================= */
+.block-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--gray-400);
+  font-style: italic;
+  line-height: 1.5;
 }
 
 /* =========================
@@ -332,6 +374,30 @@ a.logo-item:hover {
   transform: translateX(3px);
 }
 
+/* Button group for multiple buttons */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn--sm {
+  font-size: 13.5px;
+  padding: 8px 16px;
+}
+
+/* Demo button gets a special blue style to stand out */
+.btn--demo {
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: 0 2px 10px rgba(31,78,158,0.2);
+}
+
+.btn--demo:hover {
+  background: var(--blue-light);
+  box-shadow: 0 6px 20px rgba(31,78,158,0.3);
+}
+
 /* =========================
    HELP NOTE
    ========================= */
@@ -351,7 +417,7 @@ a.logo-item:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 14px;
-  margin-top: 8px;
+  margin-top: 16px;
 }
 
 .contact-card {
@@ -450,10 +516,17 @@ a:hover {
 /* =========================
    RESPONSIVE
    ========================= */
+@media (max-width: 768px) {
+  .section-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
 @media (max-width: 600px) {
   .header { padding: 40px 0 0; }
   .logo-row { gap: 12px; }
-  .block { padding: 22px; margin: 28px 0; }
+  .block { padding: 22px; }
   .contact-card-row { grid-template-columns: 1fr; }
   .presenter-strip { gap: 6px 10px; }
 }
